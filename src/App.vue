@@ -12,6 +12,12 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  mounted() {
+    window.Echo.channel('channel')
+    .listen('Hello', (e) => {
+      console.log(e)
+    })
   }
 }
 </script>
